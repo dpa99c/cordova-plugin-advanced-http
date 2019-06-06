@@ -75,8 +75,20 @@
     <source-file src="src/android/com/silkimen/http/OkConnectionFactory.java" target-dir="src/com/silkimen/http"/>
     <source-file src="src/android/com/silkimen/http/TLSConfiguration.java" target-dir="src/com/silkimen/http"/>
     <source-file src="src/android/com/silkimen/http/TLSSocketFactory.java" target-dir="src/com/silkimen/http"/>
-    <preference name="OKHTTP_VERSION" default="3.12.0" />
-    <framework src="com.squareup.okhttp3:okhttp-urlconnection:$OKHTTP_VERSION"/>
+
+    <!-- Local implementation of okhttp3:okhttp-urlconnection adapted to work with okhttp3:okhttp:3.14.2 (from which is has been removed) -->
+    <source-file src="src/android/com/silkimen/okhttp3urlconnection/OkUrlFactory.java" target-dir="src/com/silkimen/okhttp3urlconnection"/>
+    <source-file src="src/android/com/silkimen/okhttp3urlconnection/JavaNetAuthenticator.java" target-dir="src/com/silkimen/okhttp3urlconnection"/>
+    <source-file src="src/android/com/silkimen/okhttp3urlconnection/JavaNetCookieJar.java" target-dir="src/com/silkimen/okhttp3urlconnection"/>
+    <source-file src="src/android/com/silkimen/okhttp3urlconnection/internal/JavaNetHeaders.java" target-dir="src/com/silkimen/okhttp3urlconnection/internal"/>
+    <source-file src="src/android/com/silkimen/okhttp3urlconnection/internal/URLFilter.java" target-dir="src/com/silkimen/okhttp3urlconnection/internal"/>
+    <source-file src="src/android/com/silkimen/okhttp3urlconnection/internal/huc/BufferedRequestBody.java" target-dir="src/com/silkimen/okhttp3urlconnection/internal/huc"/>
+    <source-file src="src/android/com/silkimen/okhttp3urlconnection/internal/huc/DelegatingHttpsURLConnection.java" target-dir="src/com/silkimen/okhttp3urlconnection/internal/huc"/>
+    <source-file src="src/android/com/silkimen/okhttp3urlconnection/internal/huc/OkHttpsURLConnection.java" target-dir="src/com/silkimen/okhttp3urlconnection/internal/huc"/>
+    <source-file src="src/android/com/silkimen/okhttp3urlconnection/internal/huc/OkHttpURLConnection.java" target-dir="src/com/silkimen/okhttp3urlconnection/internal/huc"/>
+    <source-file src="src/android/com/silkimen/okhttp3urlconnection/internal/huc/OutputStreamRequestBody.java" target-dir="src/com/silkimen/okhttp3urlconnection/internal/huc"/>
+    <source-file src="src/android/com/silkimen/okhttp3urlconnection/internal/huc/StreamedRequestBody.java" target-dir="src/com/silkimen/okhttp3urlconnection/internal/huc"/>
+
   </platform>
   <platform name="browser">
     <config-file target="config.xml" parent="/*">
